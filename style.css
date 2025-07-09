@@ -1,0 +1,27 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header>h1 {
+    text-align: center;
+}
+
+header li {
+    list-style: none;
+    padding-bottom: 30px;
+
+}
+
+header li:hover {
+    background-color: green
+}
+
+header #menu-lateral {
+    background-color: gray;
+    width: 200px;
+    height: 400px;
+    padding: 10px;
+    margin-top: 30px;
+}
