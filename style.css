@@ -1,27 +1,81 @@
+/*Mobile First:*/
+
 * {
     margin: 0px;
     padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-header>h1 {
-    text-align: center;
+body {
+    background-image: linear-gradient(to bottom, rgb(0, 0, 150), blue);
+    height: 100vh;
+}
+
+header {
+    display: inline;
+}
+
+header #menu {
+    background-color: blue;
+    width: 100vw;
+    padding: 5px;
+    box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.226);
+    display: inline-block;
+}
+
+header div h1 {
+    padding-left: 30px;
+    color: white;
+    display: inline-block;
 }
 
 header li {
+    display: inline-block;
     list-style: none;
-    padding-bottom: 30px;
+    padding: 10px;
+    text-align: left;
 
 }
 
-header li:hover {
-    background-color: green
+header li a {
+    text-decoration: none;
+    color: rgb(19, 19, 251);
+
+}
+
+header li a:hover {
+    background-color: rgb(59, 59, 255);
+    border-radius: 10px;
+    color: white;
 }
 
 header #menu-lateral {
-    background-color: gray;
-    width: 200px;
-    height: 400px;
-    padding: 10px;
+    display: none;
+    background-color: white;
+    box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.374);
+    width: 150px;
+    height: 200px
+}
+
+header .material-symbols-outlined {
+    cursor: pointer;
+    color: blue;
+    background-color: white;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+header .material-symbols-outlined:hover {
+    color: rgb(67, 67, 233);
+    background-color: rgb(184, 183, 183);
+}
+
+main {
+    margin: auto;
     margin-top: 30px;
+    width: 350px;
+    height: 900px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px;
 }
