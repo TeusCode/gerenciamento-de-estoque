@@ -50,11 +50,11 @@ header li a:hover {
 }
 
 header #menu-lateral {
-    display: none;
     background-color: white;
     box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.374);
     width: 150px;
-    height: 200px
+    height: 100vh;
+    position: fixed;
 }
 
 header .material-symbols-outlined {
@@ -72,7 +72,6 @@ header .material-symbols-outlined:hover {
 
 main {
     margin: auto;
-    margin-top: 30px;
     width: 350px;
     height: 900px;
     background-color: white;
