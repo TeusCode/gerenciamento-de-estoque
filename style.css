@@ -76,9 +76,9 @@ nav .menu {
 }
 
 nav .menu:hover {
-    padding-left: 5px;
+    padding-left: 2px;
     background-color: rgb(180, 180, 180);
-    transition: 0.3s;
+    transition: .5s;
 }
 
 nav .txt {
@@ -125,9 +125,17 @@ header .material-symbols-outlined:hover {
 
 main {
     margin-left: 63px;
-    width: 300px;
+    width: 350px;
     height: 900px;
     background-color: white;
     padding: 15px;
     transition: .3s;
+}
+
+main #saldo {
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    background-color: blue;
+    border-radius: 5px;
 }
