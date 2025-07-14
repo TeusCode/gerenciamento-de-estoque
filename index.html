@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de estoque</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 
 <body>
@@ -17,17 +16,37 @@
             </span>
             <h1>Sistema de Estoque</h1>
         </div>
-        <div id="menu-lateral">
-            <menu>
-                <li><a href="#">Consulta de saldo</a></li>
-                <li><a href="#">Requisição</a></li>
-                <li><a href="#">Devolução</a></li>
-                <li><a href="#">Historico</a></li>
-                <li><a href="#">Exportar dados</a></li>
-            </menu>
-        </div>
-        <br>
     </header>
+    <!-- Por enquanto o menu vai está fora da header por motivos de testes-->
+
+    <nav>
+        <div class="conteiner oculto ">
+            <div class="menu btn">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </div>
+            <div class="menu">
+                <span class="material-symbols-outlined icon">
+                    box_add
+                </span>
+                <div class="text">Entrada</div>
+            </div>
+            <div class="menu">
+                <span class="material-symbols-outlined icon">
+                    box_edit
+                </span>
+                <div class="text">Saída</div>
+            </div>
+            <div class="menu">
+                <span class="material-symbols-outlined icon">
+                    arrow_back
+                </span>
+                <div class="text">Devolução</div>
+            </div>
+        </div>
+    </nav>
+
 
     <main id="conteudo">
         <section id="saldo">
