@@ -49,54 +49,64 @@ header li a:hover {
     color: white;
 }
 
-.conteiner {
+nav .conteiner {
     width: 250px;
     height: 100%;
     background-color: white;
+    transition: .3s;
+    position: fixed;
 }
 
-.btn {
+nav .btn {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
 }
 
-.btn .material-symbols-outlined {
+nav .btn span {
     padding: 0 12px;
 }
 
-.menu {
+nav .menu {
     height: 60px;
-    border-bottom: 0.5px solid #000;
+    border-bottom: .5px solid #000;
     color: blue;
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-.menu:hover {
+nav .menu:hover {
     padding-left: 5px;
-    background-color: green;
+    background-color: rgb(180, 180, 180);
     transition: 0.3s;
 }
 
-.text {
+nav .txt {
     flex: 5;
     padding-left: 20px;
     color: blue;
+    transition: .3s;
 }
 
-.icon {
+nav .icon {
     flex: 1;
     min-width: 60px;
     max-width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.oculto {
+nav .oculto {
     width: 60px;
 }
 
-.oculto .text {
+nav .oculto .txt {
     display: none;
+}
+
+nav .oculto .btn span {
+    transform: rotate(180deg);
 }
 
 header .material-symbols-outlined {
@@ -105,6 +115,7 @@ header .material-symbols-outlined {
     background-color: white;
     border-radius: 5px;
     padding: 2px;
+    transition: .3s;
 }
 
 header .material-symbols-outlined:hover {
@@ -113,11 +124,10 @@ header .material-symbols-outlined:hover {
 }
 
 main {
-    margin: auto;
-    width: 350px;
+    margin-left: 63px;
+    width: 300px;
     height: 900px;
     background-color: white;
-    border-radius: 8px;
     padding: 15px;
-    transition: margin-left 0.3s ease;
+    transition: .3s;
 }

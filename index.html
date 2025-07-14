@@ -11,44 +11,48 @@
 
 <body>
     <header>
-        <div id="menu"><span class="material-symbols-outlined" onclick="abrirMenu()">
-                menu
-            </span>
+        <div id="menu">
             <h1>Sistema de Estoque</h1>
         </div>
     </header>
     <!-- Por enquanto o menu vai está fora da header por motivos de testes-->
 
     <nav>
-        <div class="conteiner oculto ">
+        <div class="conteiner oculto">
             <div class="menu btn">
-                <span class="material-symbols-outlined">
-                    menu
+                <span class="material-symbols-outlined arrow">
+                    arrow_menu_close
                 </span>
             </div>
             <div class="menu">
-                <span class="material-symbols-outlined icon">
-                    box_add
-                </span>
-                <div class="text">Entrada</div>
+                <div class="icon">
+                    <span class="material-symbols-outlined">
+                        box_add
+                    </span>
+                </div>
+                <div class="txt">Entrada</div>
             </div>
             <div class="menu">
-                <span class="material-symbols-outlined icon">
-                    box_edit
-                </span>
-                <div class="text">Saída</div>
+                <div class="icon">
+                    <span class="material-symbols-outlined">
+                        box_edit
+                    </span>
+                </div>
+                <div class="txt">Saída</div>
             </div>
             <div class="menu">
-                <span class="material-symbols-outlined icon">
-                    arrow_back
-                </span>
-                <div class="text">Devolução</div>
+                <div class="icon">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                    </span>
+                </div>
+                <div class="txt">Devolução</div>
             </div>
         </div>
     </nav>
 
 
-    <main id="conteudo">
+    <main>
         <section id="saldo">
             <h1>Consulta de saldo</h1>
             <input type="text" placeholder="digite o nome">

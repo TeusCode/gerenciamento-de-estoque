@@ -1,5 +1,13 @@
-const menu = document.getElementById("menu-lateral")
+const menu = document.querySelector(".arrow")
+const conteiner = document.querySelector(".conteiner")
+const main = document.querySelector("main")
 
-function abrirMenu() {
-    menu.style.left = "0px";
+menu.onclick = e => {
+    if (!conteiner.classList.contains('oculto')) {
+        conteiner.classList.add('oculto')
+        main.style.marginLeft = "63px"
+    } else {
+        conteiner.classList.remove('oculto')
+        main.style.marginLeft = "260px"
+    }
 }
