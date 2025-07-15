@@ -6,55 +6,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de estoque</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media-queries.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 </head>
 
 <body>
     <header>
-        <div id="menu">
+        <div id="header">
             <h1>Sistema de Estoque</h1>
         </div>
+
+        <nav>
+            <div class="conteiner oculto">
+                <div id="menu" class="menu btn">
+                    <span class="material-symbols-outlined arrow">
+                        arrow_menu_close
+                    </span>
+                </div>
+                <div class="menu">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            box_add
+                        </span>
+                    </div>
+                    <div class="txt">Entrada</div>
+                </div>
+
+                <div class="menu">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            box_edit
+                        </span>
+                    </div>
+                    <div class="txt">Saída</div>
+                </div>
+                <div class="menu">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                    </div>
+                    <div class="txt">Devolução</div>
+                </div>
+            </div>
+        </nav>
     </header>
-    <!-- Por enquanto o menu vai está fora da header por motivos de testes-->
-
-    <nav>
-        <div class="conteiner oculto">
-            <div class="menu btn">
-                <span class="material-symbols-outlined arrow">
-                    arrow_menu_close
-                </span>
-            </div>
-            <div class="menu">
-                <div class="icon">
-                    <span class="material-symbols-outlined">
-                        box_add
-                    </span>
-                </div>
-                <div class="txt">Entrada</div>
-            </div>
-            <div class="menu">
-                <div class="icon">
-                    <span class="material-symbols-outlined">
-                        box_edit
-                    </span>
-                </div>
-                <div class="txt">Saída</div>
-            </div>
-            <div class="menu">
-                <div class="icon">
-                    <span class="material-symbols-outlined">
-                        arrow_back
-                    </span>
-                </div>
-                <div class="txt">Devolução</div>
-            </div>
-        </div>
-    </nav>
-
-
     <main>
-        <section id="saldo">
+        <section id="input_saldo">
+            <form action="">
+                <h2>Entrada no Estoque</h2>
+                <br>
+                <p>
+                    <label for="funcionario">Nome do Funcionário:</label>
+                    <input class="inputs" id="funcionario" type="text" required>
+                </p>
 
+                <p>
+                    Ação: <select class="inputs" name="acao" id="acao">
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                        <option value="devolucao">Devolução</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="item-nome">Item:</label>
+                    <input class="inputs" id="item-nome" type="text" required>
+                </p>
+
+                <p>
+                    <label for="item-codigo">Código:</label>
+                    <input class="inputs" id="item-codigo" type="number" required>
+                </p>
+
+                <p>
+                    <label for="item-quantidade">Quantidade:</label>
+                    <input class="inputs" id="item-quantidade" type="number" required>
+                </p>
+
+                <p>
+                    <label for="item-data">Data:</label>
+                    <input class="inputs" id="item-data" type="date" required>
+                </p>
+
+                <p><input type="submit" value="Confirmar"></p>
+            </form>
         </section>
     </main>
 

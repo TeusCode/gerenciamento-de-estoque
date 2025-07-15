@@ -6,10 +6,10 @@ menu.onclick = e => {
     if (!conteiner.classList.contains('oculto')) {
         conteiner.classList.add('oculto')
         main.style.marginLeft = "63px"
-        main.style.width = "350px"
+        main.style.width = "calc(100vw - 107px)"
     } else {
         conteiner.classList.remove('oculto')
         main.style.marginLeft = "260px"
-        main.style.width = "150px"
+        main.style.width = "calc(100vw - 304px)"
     }
 }
