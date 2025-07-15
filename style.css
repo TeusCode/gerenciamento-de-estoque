@@ -124,7 +124,7 @@ main {
     width: calc(100vw - 90px);
     padding: 15px;
     transition: .3s;
-    background-color: ;
+    background-color: #14532D;
 }
 
 #input_saldo {
