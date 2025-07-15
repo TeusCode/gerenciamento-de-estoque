@@ -53,16 +53,21 @@
     </header>
     <main>
         <section id="input_saldo">
-            <form action="">
+            <form action="estoque.js" method="post">
                 <h2>Entrada no Estoque</h2>
                 <br>
                 <p>
-                    <label for="funcionario">Nome do Funcionário:</label>
+
+                    <label for="funcionario">Responsável pela ação:</label>
                     <input class="inputs" id="funcionario" type="text" required>
                 </p>
 
                 <p>
-                    Ação: <select class="inputs" name="acao" id="acao">
+                    <span class="material-symbols-outlined">
+                        build
+                    </span>
+                    Tipo de movimento: <select class="inputs" name="acao" id="acao">
+                        <option value=""></option>
                         <option value="entrada">Entrada</option>
                         <option value="saida">Saída</option>
                         <option value="devolucao">Devolução</option>
@@ -70,26 +75,46 @@
                 </p>
 
                 <p>
-                    <label for="item-nome">Item:</label>
+                    <span class="material-symbols-outlined">
+                        box
+                    </span>
+                    <label for="item-nome">Nome do Produto:</label>
                     <input class="inputs" id="item-nome" type="text" required>
                 </p>
 
                 <p>
-                    <label for="item-codigo">Código:</label>
+                    <span class="material-symbols-outlined">
+                        barcode
+                    </span>
+                    <label for="item-codigo">Código do Produto:</label>
                     <input class="inputs" id="item-codigo" type="number" required>
                 </p>
 
                 <p>
+                    <span class="material-symbols-outlined">
+                        inventory
+                    </span>
                     <label for="item-quantidade">Quantidade:</label>
                     <input class="inputs" id="item-quantidade" type="number" required>
                 </p>
 
                 <p>
-                    <label for="item-data">Data:</label>
+                    <span class="material-symbols-outlined">
+                        calendar_today
+                    </span>
+                    <label for="item-data">Data da Operação:</label>
                     <input class="inputs" id="item-data" type="date" required>
                 </p>
 
-                <p><input type="submit" value="Confirmar"></p>
+                <p>
+                    <span class="material-symbols-outlined">
+                        schedule
+                    </span>
+                    <label for="item-hora">Hora da Operação:</label>
+                    <input class="inputs" id="item-hora" type="time" required>
+                </p>
+
+                <p><input id="submit-principal" type="submit" value="Registrar Movimento"></p>
             </form>
         </section>
     </main>

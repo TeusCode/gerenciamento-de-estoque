@@ -7,7 +7,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, rgb(0, 0, 150), blue);
+    background-color: #0C3B1E;
     height: 100vh;
 }
 
@@ -16,7 +16,7 @@ header {
 }
 
 header #header {
-    background-color: blue;
+    background-color: #14532D;
     width: 100vw;
     padding: 5px;
     box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.226);
@@ -57,7 +57,7 @@ nav .btn span {
 nav .menu {
     height: 60px;
     border-bottom: .5px solid #000;
-    color: blue;
+    color: #14532D;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -75,7 +75,7 @@ nav .material-symbols-outlined:hover {
 nav .txt {
     flex: 5;
     padding-left: 20px;
-    color: blue;
+    color: #14532D;
     transition: .3s;
 }
 
@@ -106,7 +106,7 @@ nav a {
 
 header .material-symbols-outlined {
     cursor: pointer;
-    color: blue;
+    color: #14532D;
     background-color: white;
     border-radius: 5px;
     padding: 5px;
@@ -114,7 +114,7 @@ header .material-symbols-outlined {
 }
 
 header .material-symbols-outlined:hover {
-    color: rgb(67, 67, 233);
+    color: #14532D;
     background-color: rgb(184, 183, 183);
 }
 
@@ -124,22 +124,20 @@ main {
     width: calc(100vw - 90px);
     padding: 15px;
     transition: .3s;
-    height: 900px;
-    background-color: green;
+    background-color: ;
 }
 
 #input_saldo {
     margin: auto;
     width: 85%;
-    height: 300px;
     background-color: white;
     border-radius: 5px;
-    padding: 15px;
+    padding: 20px;
 }
 
 #input_saldo form h2 {
     text-align: center;
-    color: blue;
+    color: #14532D;
 }
 
 /*Padronização das caixas de input*/
@@ -148,4 +146,27 @@ main {
     width: 100px;
     margin-bottom: 10px;
 
+}
+
+input,
+select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+#submit-principal {
+    background-color: #0a2b17;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#submit-principal:hover {
+    background-color: #0e3b20;
 }
