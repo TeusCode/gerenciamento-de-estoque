@@ -57,17 +57,19 @@
                 <h2>Entrada no Estoque</h2>
                 <br>
                 <p>
-
-                    <label for="funcionario">Responsável pela ação:</label>
-                    <input class="inputs" id="funcionario" type="text" required>
+                    <label for="funcionario"> <span class="material-symbols-outlined">
+                            person
+                        </span></label>
+                    <input placeholder="Responsável pela ação" class="inputs" id="funcionario" type="text" required>
                 </p>
 
                 <p>
                     <span class="material-symbols-outlined">
                         build
                     </span>
-                    Tipo de movimento: <select class="inputs" name="acao" id="acao">
-                        <option value=""></option>
+
+                    <select class="inputs" name="acao" id="acao">
+                        <option value="">Tipo de movimentação</option>
                         <option value="entrada">Entrada</option>
                         <option value="saida">Saída</option>
                         <option value="devolucao">Devolução</option>
@@ -75,43 +77,41 @@
                 </p>
 
                 <p>
-                    <span class="material-symbols-outlined">
-                        box
-                    </span>
-                    <label for="item-nome">Nome do Produto:</label>
-                    <input class="inputs" id="item-nome" type="text" required>
+
+                    <label for="item-nome"><span class="material-symbols-outlined">
+                            box
+                        </span></label>
+                    <input placeholder="Nome do produto" class="inputs" id="item-nome" type="text" required>
                 </p>
 
                 <p>
-                    <span class="material-symbols-outlined">
-                        barcode
-                    </span>
-                    <label for="item-codigo">Código do Produto:</label>
-                    <input class="inputs" id="item-codigo" type="number" required>
+                    <label for="item-codigo"><span class="material-symbols-outlined">
+                            barcode
+                        </span></label>
+                    <input placeholder="Código do produto" class="inputs" id="item-codigo" type="number" required>
                 </p>
 
                 <p>
-                    <span class="material-symbols-outlined">
-                        inventory
-                    </span>
-                    <label for="item-quantidade">Quantidade:</label>
-                    <input class="inputs" id="item-quantidade" type="number" required>
+
+                    <label for="item-quantidade"> <span class="material-symbols-outlined">
+                            inventory
+                        </span></label>
+                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade" type="number"
+                        required>
                 </p>
 
                 <p>
-                    <span class="material-symbols-outlined">
-                        calendar_today
-                    </span>
-                    <label for="item-data">Data da Operação:</label>
-                    <input class="inputs" id="item-data" type="date" required>
+                    <label for="item-data"> <span class="material-symbols-outlined">
+                            calendar_today
+                        </span></label>
+                    <input placeholder="Data da operação" class="inputs" id="item-data" type="date" required>
                 </p>
 
                 <p>
-                    <span class="material-symbols-outlined">
-                        schedule
-                    </span>
-                    <label for="item-hora">Hora da Operação:</label>
-                    <input class="inputs" id="item-hora" type="time" required>
+                    <label for="item-hora"> <span class="material-symbols-outlined">
+                            schedule
+                        </span></label>
+                    <input placeholder="Hora da operação" class="inputs" id="item-hora" type="time" required>
                 </p>
 
                 <p><input id="submit-principal" type="submit" value="Registrar Movimento"></p>
