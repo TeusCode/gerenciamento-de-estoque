@@ -57,23 +57,11 @@
                 <h2>Entrada no Estoque</h2>
                 <br>
                 <p>
-                    <label for="funcionario"> <span class="material-symbols-outlined">
+                    <label for="responsavel"> <span class="material-symbols-outlined">
                             person
                         </span></label>
-                    <input placeholder="Responsável pela ação" class="inputs" id="funcionario" type="text" required>
-                </p>
-
-                <p>
-                    <span class="material-symbols-outlined">
-                        build
-                    </span>
-
-                    <select class="inputs" name="acao" id="acao">
-                        <option value="">Tipo de movimentação</option>
-                        <option value="entrada">Entrada</option>
-                        <option value="saida">Saída</option>
-                        <option value="devolucao">Devolução</option>
-                    </select>
+                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text"
+                        required>
                 </p>
 
                 <p>
@@ -81,14 +69,15 @@
                     <label for="item-nome"><span class="material-symbols-outlined">
                             box
                         </span></label>
-                    <input placeholder="Nome do produto" class="inputs" id="item-nome" type="text" required>
+                    <input placeholder="Produto/Código" class="inputs" id="item-nome" type="text" required>
                 </p>
 
                 <p>
-                    <label for="item-codigo"><span class="material-symbols-outlined">
-                            barcode
+                    <label for="funcionario-cargo"><span class="material-symbols-outlined">
+                            badge
                         </span></label>
-                    <input placeholder="Código do produto" class="inputs" id="item-codigo" type="number" required>
+                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo" type="text"
+                        required>
                 </p>
 
                 <p>
