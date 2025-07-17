@@ -125,15 +125,12 @@ main {
     width: calc(100vw - 90px);
     padding: 15px;
     transition: .3s;
-}
-
-
-main #input_saldo form {
-    /*Aba principal*/
-    padding: 10px;
+    background-color: white;
     border-radius: 5px;
     text-align: center;
 }
+
+
 
 main span.material-symbols-outlined {
     transform: translateY(7px);
@@ -141,17 +138,8 @@ main span.material-symbols-outlined {
     border-radius: 5px;
 }
 
-#input_saldo {
-    margin: auto;
-    width: 85%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 20px;
-}
-
-#input_saldo form h2 {
-    text-align: center;
-    color: #14532D;
+.abas form h2 {
+    color: rgb(0, 99, 0);
 }
 
 /*Padronização das caixas de input*/
@@ -185,4 +173,18 @@ select {
 #submit-principal:hover {
     background-color: #208046;
     box-shadow: 0px 0px 10px #31cc6f;
+}
+
+/*Disposição das abas*/
+
+#entrada {
+    display: block;
+}
+
+#saida {
+    display: none;
+}
+
+#devolucao {
+    display: none;
 }

@@ -23,7 +23,7 @@
                         arrow_menu_close
                     </span>
                 </div>
-                <div class="menu">
+                <div id="addItem" class="menu">
                     <div class="icon">
                         <span class="material-symbols-outlined">
                             box_add
@@ -32,7 +32,7 @@
                     <div class="txt">Entrada</div>
                 </div>
 
-                <div class="menu">
+                <div id="removeItem" class="menu">
                     <div class="icon">
                         <span class="material-symbols-outlined">
                             box_edit
@@ -40,7 +40,7 @@
                     </div>
                     <div class="txt">Saída</div>
                 </div>
-                <div class="menu">
+                <div id="returnItem" class="menu">
                     <div class="icon">
                         <span class="material-symbols-outlined">
                             arrow_back
@@ -52,16 +52,16 @@
         </nav>
     </header>
     <main>
-        <section id="input_saldo">
-            <form action="estoque.js" method="post">
+        <!-- Aba entrada -->
+        <section id="entrada" class="abas">
+            <form action="" method="post">
                 <h2>Entrada no Estoque</h2>
                 <br>
                 <p>
                     <label for="responsavel"> <span class="material-symbols-outlined">
                             person
                         </span></label>
-                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text"
-                        required>
+                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text" required>
                 </p>
 
                 <p>
@@ -103,7 +103,116 @@
                     <input placeholder="Hora da operação" class="inputs" id="item-hora" type="time" required>
                 </p>
 
-                <p><input id="submit-principal" type="submit" value="Registrar Movimento"></p>
+                <p><input id="submit-principal" type="submit" value="Registrar Entrada"></p>
+            </form>
+        </section>
+        <!-- Aba saída -->
+        <section id="saida" class="abas">
+            <form action="" method="post">
+                <h2>Saída do Estoque</h2>
+                <br>
+                <p>
+                    <label for="responsavel"> <span class="material-symbols-outlined">
+                            person
+                        </span></label>
+                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text" required>
+                </p>
+
+                <p>
+
+                    <label for="item-nome"><span class="material-symbols-outlined">
+                            box
+                        </span></label>
+                    <input placeholder="Produto/Código" class="inputs" id="item-nome" type="text" required>
+                </p>
+
+                <p>
+                    <label for="funcionario-cargo"><span class="material-symbols-outlined">
+                            badge
+                        </span></label>
+                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo" type="text"
+                        required>
+                </p>
+
+                <p>
+
+                    <label for="item-quantidade"> <span class="material-symbols-outlined">
+                            inventory
+                        </span></label>
+                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade" type="number"
+                        required>
+                </p>
+
+                <p>
+                    <label for="item-data"> <span class="material-symbols-outlined">
+                            calendar_today
+                        </span></label>
+                    <input placeholder="Data da operação" class="inputs" id="item-data" type="date" required>
+                </p>
+
+                <p>
+                    <label for="item-hora"> <span class="material-symbols-outlined">
+                            schedule
+                        </span></label>
+                    <input placeholder="Hora da operação" class="inputs" id="item-hora" type="time" required>
+                </p>
+
+                <p><input id="submit-principal" type="submit" value="Registrar Saída"></p>
+            </form>
+        </section>
+
+        <!-- Aba Devolução -->
+        <section id="devolucao" class="abas">
+            <form action="" method="post">
+                <h2>Devolução do Estoque</h2>
+                <br>
+                <p>
+                    <label for="responsavel"> <span class="material-symbols-outlined">
+                            person
+                        </span></label>
+                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text" required>
+                </p>
+
+                <p>
+
+                    <label for="item-nome"><span class="material-symbols-outlined">
+                            box
+                        </span></label>
+                    <input placeholder="Produto/Código" class="inputs" id="item-nome" type="text" required>
+                </p>
+
+                <p>
+                    <label for="funcionario-cargo"><span class="material-symbols-outlined">
+                            badge
+                        </span></label>
+                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo" type="text"
+                        required>
+                </p>
+
+                <p>
+
+                    <label for="item-quantidade"> <span class="material-symbols-outlined">
+                            inventory
+                        </span></label>
+                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade" type="number"
+                        required>
+                </p>
+
+                <p>
+                    <label for="item-data"> <span class="material-symbols-outlined">
+                            calendar_today
+                        </span></label>
+                    <input placeholder="Data da operação" class="inputs" id="item-data" type="date" required>
+                </p>
+
+                <p>
+                    <label for="item-hora"> <span class="material-symbols-outlined">
+                            schedule
+                        </span></label>
+                    <input placeholder="Hora da operação" class="inputs" id="item-hora" type="time" required>
+                </p>
+
+                <p><input id="submit-principal" type="submit" value="Registrar Devolução"></p>
             </form>
         </section>
     </main>
