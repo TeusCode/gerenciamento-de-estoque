@@ -16,36 +16,65 @@ menu.onclick = e => {
 }
 
 //Abre abas do menu:
+const openDashboard = document.querySelector("#openDashboard")
 const addItem = document.querySelector("#addItem")
 const removeItem = document.querySelector("#removeItem")
 const returnItem = document.querySelector("#returnItem")
+const openHistory = document.querySelector("#openHistory")
 
 //Conteúdo das abas:
+const dashboard = document.querySelector("#dashboard")
 const entrada = document.querySelector("#entrada")
 const saida = document.querySelector("#saida")
 const devolucao = document.querySelector("#devolucao")
+const historico = document.querySelector("#history")
 let positionAba = 1
 
 //Disposição das abas:
-addItem.onclick = e => {
-    entrada.style.display = "block"
+openDashboard.onclick = e => {
+    dashboard.style.display = "block"
+    entrada.style.display = "none"
     saida.style.display = "none"
     devolucao.style.display = "none"
+    historico.style.display = "none"
     positionAba = 1
 }
 
-removeItem.onclick = e => {
-    entrada.style.display = "none"
-    saida.style.display = "block"
+addItem.onclick = e => {
+    dashboard.style.display = "none"
+    entrada.style.display = "block"
+    saida.style.display = "none"
     devolucao.style.display = "none"
+    historico.style.display = "none"
     positionAba = 2
 }
 
+removeItem.onclick = e => {
+    dashboard.style.display = "none"
+    entrada.style.display = "none"
+    saida.style.display = "block"
+    devolucao.style.display = "none"
+    historico.style.display = "none"
+    positionAba = 3
+}
+
 returnItem.onclick = e => {
+    dashboard.style.display = "none"
     entrada.style.display = "none"
     saida.style.display = "none"
     devolucao.style.display = "block"
-    positionAba = 3
+    historico.style.display = "none"
+    positionAba = 4
+}
+
+openHistory.onclick = e => {
+    dashboard.style.display = "none"
+    entrada.style.display = "none"
+    saida.style.display = "none"
+    devolucao.style.display = "none"
+    historico.style.display = "block"
+
+    positionAba = 5
 }
 
 //Mostra em que aba está:

@@ -17,41 +17,70 @@
         </div>
 
         <nav>
+            <!-- Abre o menu -->
             <div class="conteiner oculto">
                 <div id="menu" class="menu btn">
                     <span class="material-symbols-outlined arrow">
                         arrow_menu_close
                     </span>
                 </div>
+                <!-- dashboard -->
+                <div id="openDashboard" class="menu">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            space_dashboard
+                        </span>
+                    </div>
+                    <div class="txt">Dashboard</div>
+                </div>
+
+                <!-- Entrada -->
                 <div id="addItem" class="menu">
                     <div class="icon">
                         <span class="material-symbols-outlined">
-                            box_add
+                            inventory_2
                         </span>
                     </div>
                     <div class="txt">Entrada</div>
                 </div>
-
+                <!-- Saída -->
                 <div id="removeItem" class="menu">
                     <div class="icon">
                         <span class="material-symbols-outlined">
-                            box_edit
+                            outbox
                         </span>
                     </div>
                     <div class="txt">Saída</div>
                 </div>
+                <!-- Devolução -->
                 <div id="returnItem" class="menu">
                     <div class="icon">
                         <span class="material-symbols-outlined">
-                            arrow_back
+                            undo
                         </span>
                     </div>
                     <div class="txt">Devolução</div>
                 </div>
+                <!-- History-->
+                <div id="openHistory" class="menu">
+                    <div class="icon">
+                        <span class="material-symbols-outlined">
+                            history
+                        </span>
+                    </div>
+                    <div class="txt">Historico</div>
+                </div>
+
             </div>
         </nav>
     </header>
     <main>
+        <section id="dashboard" class="abas">
+            <form action="" method="post">
+                <h2>Painel de estoque</h2>
+            </form>
+
+        </section>
         <!-- Aba entrada -->
         <section id="entrada" class="abas">
             <form action="" method="post">
@@ -213,6 +242,12 @@
                 </p>
 
                 <p><input id="submit-principal" type="submit" value="Registrar Devolução"></p>
+            </form>
+        </section>
+
+        <section id="history" class="abas">
+            <form action="" method="post">
+                <h2>Historico de movimentação</h2>
             </form>
         </section>
     </main>

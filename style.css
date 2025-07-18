@@ -176,9 +176,12 @@ select {
 }
 
 /*Disposição das abas*/
+#dashboard {
+    display: block;
+}
 
 #entrada {
-    display: block;
+    display: none;
 }
 
 #saida {
@@ -186,5 +189,9 @@ select {
 }
 
 #devolucao {
+    display: none;
+}
+
+#history {
     display: none;
 }
