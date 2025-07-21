@@ -180,6 +180,33 @@ select {
     display: block;
 }
 
+#dashboard table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(196, 194, 194);
+    margin-top: 20px;
+}
+
+#dashboard th,
+td {
+    padding: 12px 15px;
+    border: 1px solid #1c6a45;
+    text-align: left;
+}
+
+#dashboard th {
+    background-color: #147a50;
+    color: #fff;
+}
+
+#dashboard tr:nth-child(even) {
+    background-color: white;
+}
+
+#dashboard tr:hover {
+    background-color: #427761;
+}
+
 #entrada {
     display: none;
 }
