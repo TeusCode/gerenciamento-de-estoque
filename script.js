@@ -77,6 +77,28 @@ openHistory.onclick = e => {
     positionAba = 5
 }
 
-//Mostra em que aba está:
+//Modifica a tabela:
+const tabelaProdutos = document.querySelector('#produtosEstoque')
+const dadosTabela = document.querySelector('#dadosTabela')
+
+//Entrada:
+
+function rgEntrada() {
+    const resEn = document.querySelector('#responsavel-entrada').value
+    const proEn = document.querySelector('#produto-entrada').value
+    const codEn = document.querySelector('#codigo-entrada').value
+    const carEn = document.querySelector('#cargo-entrada').value
+    const qntEn = document.querySelector('#quantidade-entrada').value
+    const dtEn = document.querySelector('#data-entrada').value
+    const hrEn = document.querySelector('#hora-entrada').value
+    const fEn = document.querySelector('#form-entrada')
+
+    console.log(`${resEn}, ${proEn}, ${codEn}, ${carEn}, ${qntEn}, ${dtEn}, ${hrEn}`)
+    alert('Entrada Registrada! ✅')
+
+    fEn.reset()
+
+
+}
 
 

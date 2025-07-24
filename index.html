@@ -76,34 +76,28 @@
     </header>
     <main>
         <section id="dashboard" class="abas">
-            <table>
+
+            <div id="pesquisar-estoque">
+                <h2>Pesquisar no estoque</h2>
+                <br>
+                <input type="text" placeholder="Produto/Código">
+            </div>
+
+            <div id="button-pesquisar-estoque">
+                <input type="button" value="Pesquisar">
+            </div>
+
+            <table id="produtosEstoque">
                 <thead>
                     <tr>
-                        <th>Código</th>
                         <th>Produto</th>
+                        <th>Código</th>
                         <th>Quantidade</th>
                         <th>Última Movimentação</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>001</td>
-                        <td>Pá de obra</td>
-                        <td>7</td>
-                        <td>18/07/2025 09:42</td>
-                    </tr>
-                    <tr>
-                        <td>002</td>
-                        <td>Martelo</td>
-                        <td>15</td>
-                        <td>20/07/2025 14:30</td>
-                    </tr>
-                    <tr>
-                        <td>003</td>
-                        <td>Luvas de segurança</td>
-                        <td>30</td>
-                        <td>19/07/2025 11:00</td>
-                    </tr>
+                <tbody id="dadosTabela">
+
                 </tbody>
             </table>
 
@@ -114,14 +108,14 @@
         </section>
         <!-- Aba entrada -->
         <section id="entrada" class="abas">
-            <form action="" method="post">
+            <form id="form-entrada" action="" method="post">
                 <h2>Entrada no Estoque</h2>
                 <br>
                 <p>
                     <label for="responsavel"> <span class="material-symbols-outlined">
                             person
                         </span></label>
-                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text" required>
+                    <input placeholder="Responsável" class="inputs" id="responsavel-entrada" type="text" required>
                 </p>
 
                 <p>
@@ -129,15 +123,22 @@
                     <label for="item-nome"><span class="material-symbols-outlined">
                             box
                         </span></label>
-                    <input placeholder="Produto/Código" class="inputs" id="item-nome" type="text" required>
+                    <input placeholder="Produto" class="inputs" id="produto-entrada" type="text" required>
+                </p>
+
+                <p>
+                    <label for="item-nome"><span class="material-symbols-outlined">
+                            barcode
+                        </span></label>
+                    <input placeholder="Código" class="inputs" id="codigo-entrada" type="text" required>
+
                 </p>
 
                 <p>
                     <label for="funcionario-cargo"><span class="material-symbols-outlined">
                             badge
                         </span></label>
-                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo" type="text"
-                        required>
+                    <input placeholder="Cargo do Funcionário" class="inputs" id="cargo-entrada" type="text" required>
                 </p>
 
                 <p>
@@ -145,7 +146,7 @@
                     <label for="item-quantidade"> <span class="material-symbols-outlined">
                             inventory
                         </span></label>
-                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade" type="number"
+                    <input placeholder="Quantidade do produto" class="inputs" id="quantidade-entrada" type="number"
                         required>
                 </p>
 
@@ -153,17 +154,17 @@
                     <label for="item-data"> <span class="material-symbols-outlined">
                             calendar_today
                         </span></label>
-                    <input placeholder="Data da operação" class="inputs" id="item-data" type="date" required>
+                    <input placeholder="Data da operação" class="inputs" id="data-entrada" type="date" required>
                 </p>
 
                 <p>
                     <label for="item-hora"> <span class="material-symbols-outlined">
                             schedule
                         </span></label>
-                    <input placeholder="Hora da operação" class="inputs" id="item-hora" type="time" required>
+                    <input placeholder="Hora da operação" class="inputs" id="hora-entrada" type="time" required>
                 </p>
 
-                <p><input id="submit-principal" type="submit" value="Registrar Entrada"></p>
+                <p><input id="submit-entrada" type="button" value="Registrar Entrada" onclick="rgEntrada()"></p>
             </form>
         </section>
         <!-- Aba saída -->
@@ -175,7 +176,7 @@
                     <label for="responsavel"> <span class="material-symbols-outlined">
                             person
                         </span></label>
-                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text" required>
+                    <input placeholder="Responsável" class="inputs" id="responsavel-saida" type="text" required>
                 </p>
 
                 <p>
@@ -183,14 +184,22 @@
                     <label for="item-nome"><span class="material-symbols-outlined">
                             box
                         </span></label>
-                    <input placeholder="Produto/Código" class="inputs" id="item-nome" type="text" required>
+                    <input placeholder="Produto" class="inputs" id="item-nome-saida" type="text" required>
+                </p>
+
+                <p>
+                    <label for="item-nome"><span class="material-symbols-outlined">
+                            barcode
+                        </span></label>
+                    <input placeholder="Código" class="inputs" id="codigo-saida" type="text" required>
+
                 </p>
 
                 <p>
                     <label for="funcionario-cargo"><span class="material-symbols-outlined">
                             badge
                         </span></label>
-                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo" type="text"
+                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo-saida" type="text"
                         required>
                 </p>
 
@@ -199,7 +208,7 @@
                     <label for="item-quantidade"> <span class="material-symbols-outlined">
                             inventory
                         </span></label>
-                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade" type="number"
+                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade-saida" type="number"
                         required>
                 </p>
 
@@ -207,17 +216,17 @@
                     <label for="item-data"> <span class="material-symbols-outlined">
                             calendar_today
                         </span></label>
-                    <input placeholder="Data da operação" class="inputs" id="item-data" type="date" required>
+                    <input placeholder="Data da operação" class="inputs" id="item-data-saida" type="date" required>
                 </p>
 
                 <p>
                     <label for="item-hora"> <span class="material-symbols-outlined">
                             schedule
                         </span></label>
-                    <input placeholder="Hora da operação" class="inputs" id="item-hora" type="time" required>
+                    <input placeholder="Hora da operação" class="inputs" id="item-hora-saida" type="time" required>
                 </p>
 
-                <p><input id="submit-principal" type="submit" value="Registrar Saída"></p>
+                <p><input id="submit-saida" type="submit" value="Registrar Saída"></p>
             </form>
         </section>
 
@@ -230,7 +239,7 @@
                     <label for="responsavel"> <span class="material-symbols-outlined">
                             person
                         </span></label>
-                    <input placeholder="Responsável" class="inputs" id="responsavel" type="text" required>
+                    <input placeholder="Responsável" class="inputs" id="responsavel-devolucao" type="text" required>
                 </p>
 
                 <p>
@@ -238,15 +247,23 @@
                     <label for="item-nome"><span class="material-symbols-outlined">
                             box
                         </span></label>
-                    <input placeholder="Produto/Código" class="inputs" id="item-nome" type="text" required>
+                    <input placeholder="Produto" class="inputs" id="item-nome-devolucao" type="text" required>
+                </p>
+
+                <p>
+                    <label for="item-nome"><span class="material-symbols-outlined">
+                            barcode
+                        </span></label>
+                    <input placeholder="Código" class="inputs" id="codigo-devolucao" type="text" required>
+
                 </p>
 
                 <p>
                     <label for="funcionario-cargo"><span class="material-symbols-outlined">
                             badge
                         </span></label>
-                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo" type="text"
-                        required>
+                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo-devolucao"
+                        type="text" required>
                 </p>
 
                 <p>
@@ -254,25 +271,25 @@
                     <label for="item-quantidade"> <span class="material-symbols-outlined">
                             inventory
                         </span></label>
-                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade" type="number"
-                        required>
+                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade-devolucao"
+                        type="number" required>
                 </p>
 
                 <p>
                     <label for="item-data"> <span class="material-symbols-outlined">
                             calendar_today
                         </span></label>
-                    <input placeholder="Data da operação" class="inputs" id="item-data" type="date" required>
+                    <input placeholder="Data da operação" class="inputs" id="item-data-devolucao" type="date" required>
                 </p>
 
                 <p>
                     <label for="item-hora"> <span class="material-symbols-outlined">
                             schedule
                         </span></label>
-                    <input placeholder="Hora da operação" class="inputs" id="item-hora" type="time" required>
+                    <input placeholder="Hora da operação" class="inputs" id="item-hora-devolucao" type="time" required>
                 </p>
 
-                <p><input id="submit-principal" type="submit" value="Registrar Devolução"></p>
+                <p><input id="submit-devolucao" type="submit" value="Registrar Devolução"></p>
             </form>
         </section>
 
