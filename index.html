@@ -87,7 +87,7 @@
                 <input type="button" value="Pesquisar">
             </div>
 
-            <table id="produtosEstoque">
+            <table id="produtosEstoque" class="tabelas">
                 <thead>
                     <tr>
                         <th>Produto</th>
@@ -294,9 +294,22 @@
         </section>
 
         <section id="history" class="abas">
-            <form action="" method="post">
-                <h2>Historico de movimentação</h2>
-            </form>
+            <table class="tabelas">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Responsável</th>
+                        <th>Produto</th>
+                        <th>Código</th>
+                        <th>Quantidade</th>
+                        <th>Tipo de Operação</th>
+                    </tr>
+                </thead>
+                <tbody id="historicoDados">
+                    <!-- Os dados do histórico serão inseridos aqui dinamicamente -->
+                </tbody>
+            </table>
         </section>
     </main>
 

@@ -93,11 +93,25 @@ function rgEntrada() {
     const hrEn = document.querySelector('#hora-entrada').value
     const fEn = document.querySelector('#form-entrada')
 
-    console.log(`${resEn}, ${proEn}, ${codEn}, ${carEn}, ${qntEn}, ${dtEn}, ${hrEn}`)
-    alert('Entrada Registrada! ✅')
+    if (resEn === '' || proEn === '' || codEn === '' || carEn === '' || qntEn === '' || dtEn === '' || hrEn === '') {
+        alert('Preencha todos os campos!')
+        return
+    } else {
 
-    fEn.reset()
+        //Registra tabela
+        const dado = document.querySelector('#dadosTabela')
 
+        alert('Entrada registrada com sucesso!')
+        dado.innerHTML += `
+        <tr>
+            <td>${proEn}</td>
+            <td>${codEn}</td>
+            <td>${qntEn}</td>
+            <td>${dtEn}</td>
+        </tr>
+    `
+        fEn.reset()
+    }
 
 }
 
