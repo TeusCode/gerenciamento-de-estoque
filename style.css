@@ -26,6 +26,7 @@ body {
 
 header {
     display: inline;
+    /**/
     position: fixed;
     top: 0;
     left: 0;
@@ -36,6 +37,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 header #header {
@@ -57,11 +60,6 @@ header div h1 {
 }
 
 nav .conteiner {
-    width: 250px;
-    height: 100%;
-    background-color: var(--light);
-    transition: .3s;
-    position: fixed;
     position: fixed;
     top: 60px;
     /* abaixo do header */
@@ -71,6 +69,12 @@ nav .conteiner {
     background-color: white;
     border-right: 1px solid #ccc;
     z-index: 500;
+    /**/
+    width: 250px;
+    height: 100%;
+    background-color: var(--light);
+    transition: .3s;
+    position: fixed;
 }
 
 nav .btn {
