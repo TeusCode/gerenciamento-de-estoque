@@ -100,6 +100,7 @@ function rgEntrada() {
 
         //Registra tabela
         const dado = document.querySelector('#dadosTabela')
+        const dadoHistorico = document.querySelector('#historicoDados')
 
         alert('Entrada registrada com sucesso!')
         dado.innerHTML += `
@@ -110,8 +111,22 @@ function rgEntrada() {
             <td>${dtEn}</td>
         </tr>
     `
+        dadoHistorico.innerHTML += `
+<tr>
+<td>${dtEn}</td>
+<td>${hrEn}</td>
+<td>${resEn}</td>
+<td>${carEn}</td>
+<td>${proEn}</td>
+<td>${codEn}</td>
+<td>${qntEn}</td>
+<td>Entrada</td>
+</tr>
+        `
+
         fEn.reset()
     }
+
 
 }
 
