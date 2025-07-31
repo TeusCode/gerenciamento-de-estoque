@@ -82,52 +82,188 @@ const tabelaProdutos = document.querySelector('#produtosEstoque')
 const dadosTabela = document.querySelector('#dadosTabela')
 
 //Entrada:
+let estoque = [];
 
-function rgEntrada() {
-    const resEn = document.querySelector('#responsavel-entrada').value
-    const proEn = document.querySelector('#produto-entrada').value
-    const codEn = document.querySelector('#codigo-entrada').value
-    const carEn = document.querySelector('#cargo-entrada').value
-    const qntEn = document.querySelector('#quantidade-entrada').value
-    const dtEn = document.querySelector('#data-entrada').value
-    const hrEn = document.querySelector('#hora-entrada').value
-    const fEn = document.querySelector('#form-entrada')
+// Atualiza a tabela de estoque na tela
+function atualizarTabelaEstoque() {
+    const tabela = document.querySelector('#dadosTabela');
+    tabela.innerHTML = '';
 
-    if (resEn === '' || proEn === '' || codEn === '' || carEn === '' || qntEn === '' || dtEn === '' || hrEn === '') {
-        alert('Preencha todos os campos!')
-        return
-    } else {
-
-        //Registra tabela
-        const dado = document.querySelector('#dadosTabela')
-        const dadoHistorico = document.querySelector('#historicoDados')
-
-        alert('Entrada registrada com sucesso!')
-        dado.innerHTML += `
-        <tr>
-            <td>${proEn}</td>
-            <td>${codEn}</td>
-            <td>${qntEn}</td>
-            <td>${dtEn}</td>
-        </tr>
-    `
-        dadoHistorico.innerHTML += `
-<tr>
-<td>${dtEn}</td>
-<td>${hrEn}</td>
-<td>${resEn}</td>
-<td>${carEn}</td>
-<td>${proEn}</td>
-<td>${codEn}</td>
-<td>${qntEn}</td>
-<td>Entrada</td>
-</tr>
-        `
-
-        fEn.reset()
-    }
-
-
+    estoque.forEach(item => {
+        const linha = tabela.insertRow();
+        linha.insertCell().textContent = item.produto;
+        linha.insertCell().textContent = item.codigo;
+        linha.insertCell().textContent = item.quantidade;
+        linha.insertCell().textContent = item.data;
+    });
 }
 
+// Preencher automático: nome ↔ código
+function configurarAutoPreenchimento() {
+    const inputNome = document.querySelector('#produto-entrada');
+    const inputCodigo = document.querySelector('#codigo-entrada');
 
+    inputNome.addEventListener('input', () => {
+        const nome = inputNome.value.trim();
+        const item = estoque.find(p => p.produto.toLowerCase() === nome.toLowerCase());
+        if (item) inputCodigo.value = item.codigo;
+    });
+
+    inputCodigo.addEventListener('input', () => {
+        const codigo = inputCodigo.value.trim();
+        const item = estoque.find(p => p.codigo === codigo);
+        if (item) inputNome.value = item.produto;
+    });
+}
+
+configurarAutoPreenchimento();
+
+function rgEntrada() {
+    const resEn = document.querySelector('#responsavel-entrada').value;
+    const proEn = document.querySelector('#produto-entrada').value.trim();
+    const codEn = document.querySelector('#codigo-entrada').value.trim();
+    const carEn = document.querySelector('#cargo-entrada').value;
+    const qntEn = parseInt(document.querySelector('#quantidade-entrada').value);
+    const dtEn = document.querySelector('#data-entrada').value;
+    const hrEn = document.querySelector('#hora-entrada').value;
+    const fEn = document.querySelector('#form-entrada');
+
+    if (
+        resEn === '' || proEn === '' || codEn === '' || carEn === '' ||
+        isNaN(qntEn) || dtEn === '' || hrEn === ''
+    ) {
+        alert('Preencha todos os campos corretamente!');
+        return;
+    }
+
+    // ⚠️ Verifica se nome já existe com código diferente
+    const conflito = estoque.find(item => item.produto.toLowerCase() === proEn.toLowerCase() && item.codigo !== codEn);
+    if (conflito) {
+        alert(`Erro: o produto "${proEn}" já existe com o código "${conflito.codigo}".`);
+        return;
+    }
+
+    const produtoExistente = estoque.find(item => item.codigo === codEn);
+
+    if (produtoExistente) {
+        produtoExistente.quantidade += qntEn;
+        produtoExistente.data = dtEn;
+    } else {
+        estoque.push({
+            produto: proEn,
+            codigo: codEn,
+            quantidade: qntEn,
+            data: dtEn
+        });
+    }
+
+    atualizarTabelaEstoque();
+
+    // Registro no histórico
+    const dadoHistorico = document.querySelector('#historicoDados');
+    const linhaHistorico = dadoHistorico.insertRow();
+    linhaHistorico.insertCell().textContent = dtEn;
+    linhaHistorico.insertCell().textContent = hrEn;
+    linhaHistorico.insertCell().textContent = resEn;
+    linhaHistorico.insertCell().textContent = carEn;
+    linhaHistorico.insertCell().textContent = proEn;
+    linhaHistorico.insertCell().textContent = codEn;
+    linhaHistorico.insertCell().textContent = qntEn;
+    linhaHistorico.insertCell().textContent = 'Entrada';
+
+    alert('Entrada registrada com sucesso!');
+    fEn.reset();
+}
+
+// Registro de saída:
+// Atualiza a tabela de estoque visual
+function atualizarTabelaEstoque() {
+    const tabela = document.querySelector('#dadosTabela');
+    tabela.innerHTML = '';
+
+    estoque.forEach(item => {
+        const linha = tabela.insertRow();
+        linha.insertCell().textContent = item.produto;
+        linha.insertCell().textContent = item.codigo;
+        linha.insertCell().textContent = item.quantidade;
+        linha.insertCell().textContent = item.data;
+    });
+}
+
+// Preenchimento automático: nome ↔ código (saída)
+function configurarAutoPreenchimentoSaida() {
+    const inputNome = document.querySelector('#produto-saida');
+    const inputCodigo = document.querySelector('#codigo-saida');
+
+    inputNome.addEventListener('input', () => {
+        const nome = inputNome.value.trim();
+        const item = estoque.find(p => p.produto.toLowerCase() === nome.toLowerCase());
+        if (item) inputCodigo.value = item.codigo;
+    });
+
+    inputCodigo.addEventListener('input', () => {
+        const codigo = inputCodigo.value.trim();
+        const item = estoque.find(p => p.codigo === codigo);
+        if (item) inputNome.value = item.produto;
+    });
+}
+
+configurarAutoPreenchimentoSaida();
+
+function rgSaida() {
+    const resSa = document.querySelector('#responsavel-saida').value;
+    const proSa = document.querySelector('#produto-saida').value.trim();
+    const codSa = document.querySelector('#codigo-saida').value.trim();
+    const carSa = document.querySelector('#cargo-saida').value;
+    const qntSa = parseInt(document.querySelector('#quantidade-saida').value);
+    const dtSa = document.querySelector('#data-saida').value;
+    const hrSa = document.querySelector('#hora-saida').value;
+    const fSa = document.querySelector('#form-saida');
+
+    if (
+        resSa === '' || proSa === '' || codSa === '' || carSa === '' ||
+        isNaN(qntSa) || dtSa === '' || hrSa === ''
+    ) {
+        alert('Preencha todos os campos corretamente!');
+        return;
+    }
+
+    const item = estoque.find(p => p.codigo === codSa);
+
+    if (!item) {
+        alert(`Erro: produto com código "${codSa}" não encontrado no estoque.`);
+        return;
+    }
+
+    if (item.produto.toLowerCase() !== proSa.toLowerCase()) {
+        alert(`Erro: nome e código não correspondem. O código "${codSa}" é do produto "${item.produto}".`);
+        return;
+    }
+
+    if (item.quantidade < qntSa) {
+        alert(`Erro: quantidade insuficiente em estoque. Disponível: ${item.quantidade}`);
+        return;
+    }
+
+    item.quantidade -= qntSa;
+
+    if (item.quantidade === 0) {
+        estoque = estoque.filter(p => p.codigo !== codSa);
+    }
+
+    atualizarTabelaEstoque();
+
+    const dadoHistorico = document.querySelector('#historicoDados');
+    const linhaHistorico = dadoHistorico.insertRow();
+    linhaHistorico.insertCell().textContent = dtSa;
+    linhaHistorico.insertCell().textContent = hrSa;
+    linhaHistorico.insertCell().textContent = resSa;
+    linhaHistorico.insertCell().textContent = carSa;
+    linhaHistorico.insertCell().textContent = proSa;
+    linhaHistorico.insertCell().textContent = codSa;
+    linhaHistorico.insertCell().textContent = qntSa;
+    linhaHistorico.insertCell().textContent = 'Saída';
+
+    alert('Saída registrada com sucesso!');
+    fSa.reset();
+}
