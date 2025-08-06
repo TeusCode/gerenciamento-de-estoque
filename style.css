@@ -268,3 +268,8 @@ form .button:hover {
 #history {
     display: none;
 }
+
+.linha-destaque {
+    background-color: #cce5ff !important;
+    font-weight: bold;
+}

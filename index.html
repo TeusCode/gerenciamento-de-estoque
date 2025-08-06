@@ -80,11 +80,7 @@
             <div id="pesquisar-estoque">
                 <h2>Pesquisar no estoque</h2>
                 <br>
-                <input type="number" placeholder="Produto/Código">
-            </div>
-
-            <div id="button-pesquisar-estoque">
-                <input type="button" value="Pesquisar">
+                <input type="text" id="campoPesquisa" placeholder="Produto/Código" onkeyup="filtrarTabela()">
             </div>
 
             <table id="produtosEstoque" class="tabelas">

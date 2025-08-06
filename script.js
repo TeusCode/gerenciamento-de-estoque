@@ -267,3 +267,33 @@ function rgSaida() {
     alert('Saída registrada com sucesso!');
     fSa.reset();
 }
+
+function filtrarTabela() {
+    const input = document.getElementById("campoPesquisa");
+    const filtro = input.value.toLowerCase();
+    const tabela = document.getElementById("produtosEstoque");
+    const linhas = tabela.getElementsByTagName("tr");
+
+    for (let i = 1; i < linhas.length; i++) {
+        const linha = linhas[i];
+        const colunas = linha.getElementsByTagName("td");
+
+        if (colunas.length >= 2) {
+            const nomeProduto = colunas[0].textContent.toLowerCase();
+            const codigo = colunas[1].textContent.toLowerCase();
+
+            const corresponde = nomeProduto.includes(filtro) || codigo.includes(filtro);
+
+            // Mostra ou oculta a linha
+            linha.style.display = corresponde ? "" : "none";
+
+            // Remove destaque anterior
+            linha.classList.remove("linha-destaque");
+
+            // Adiciona destaque se bater
+            if (corresponde && filtro !== "") {
+                linha.classList.add("linha-destaque");
+            }
+        }
+    }
+}
