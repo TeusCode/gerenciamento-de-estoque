@@ -1,3 +1,18 @@
+//Tela de Registro:
+function registrarUsuario() {
+    const usuario = document.getElementById('usuario').value
+    const email = document.getElementById('email').value
+    const senha = document.getElementById('senha').value
+
+    
+}
+
+
+
+
+
+
+
 //Abre menu lateral:
 const menu = document.querySelector(".arrow")
 const conteiner = document.querySelector(".conteiner")

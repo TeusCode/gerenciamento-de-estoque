@@ -15,16 +15,17 @@
             <form action="" method="post">
 
                 <p>
-                    <label for="username">Usuário: <input type="text" name="usuario" placeholder="Digite seu usuário"
-                            required></label>
+                    <label for="usuario">Usuário: <input id="usuario" type="text" name="usuario"
+                            placeholder="Digite seu usuário" required></label>
                 </p>
 
                 <p>
-                    <label for="email">E-mail: <input type="email" name="email" required
+                    <label for="email">E-mail: <input id="email" type="email" name="email" required
                             placeholder="Digite seu e-mail"></label>
                 </p>
 
-                <p><label for="senha">Senha: <input type="password" name="senha" placeholder="Digite a sua senha"></label></p>
+                <p><label for="senha">Senha: <input id="senha" type="password" name="senha"
+                            placeholder="Digite a sua senha"></label></p>
 
                 <p><input type="button" value="Registrar" onclick="registrarUsuario()"></p>
 
@@ -33,6 +34,7 @@
         </div>
 
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
