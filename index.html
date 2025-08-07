@@ -4,318 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de estoque</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media-queries.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Sistema de estoque</title>
 </head>
 
 <body>
-    <header>
-        <div id="header">
-            <h1>Sistema de Estoque</h1>
+    <div id="container">
+        <div>
+            <h1>Registre - se</h1>
+            <p>Registre-se utilizando e-mail para acessar o Gerenciamento de estoque</p>
+            <form action="" method="post">
+
+                <p>
+                    <label for="username">Usuário: <input type="text" name="usuario" placeholder="Digite seu usuário"
+                            required></label>
+                </p>
+
+                <p>
+                    <label for="email">E-mail: <input type="email" name="email" required
+                            placeholder="Digite seu e-mail"></label>
+                </p>
+
+                <p><label for="senha">Senha: <input type="password" name="senha" placeholder="Digite a sua senha"></label></p>
+
+                <p><input type="button" value="Registrar" onclick="registrarUsuario()"></p>
+
+                <p>Já possui uma conta? <input type="button" value="Login" onclick="loginUsuario()"></p>
+            </form>
         </div>
 
-        <nav>
-            <!-- Abre o menu -->
-            <div class="conteiner oculto">
-                <div id="menu" class="menu btn">
-                    <span class="material-symbols-outlined arrow">
-                        arrow_menu_close
-                    </span>
-                </div>
-                <!-- dashboard -->
-                <div id="openDashboard" class="menu">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            space_dashboard
-                        </span>
-                    </div>
-                    <div class="txt">Dashboard</div>
-                </div>
-
-                <!-- Entrada -->
-                <div id="addItem" class="menu">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            inventory_2
-                        </span>
-                    </div>
-                    <div class="txt">Entrada</div>
-                </div>
-                <!-- Saída -->
-                <div id="removeItem" class="menu">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            outbox
-                        </span>
-                    </div>
-                    <div class="txt">Saída</div>
-                </div>
-                <!-- Devolução -->
-                <div id="returnItem" class="menu">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            undo
-                        </span>
-                    </div>
-                    <div class="txt">Devolução</div>
-                </div>
-                <!-- History-->
-                <div id="openHistory" class="menu">
-                    <div class="icon">
-                        <span class="material-symbols-outlined">
-                            history
-                        </span>
-                    </div>
-                    <div class="txt">Historico</div>
-                </div>
-
-            </div>
-        </nav>
-    </header>
-    <main>
-        <section id="dashboard" class="abas">
-
-            <div id="pesquisar-estoque">
-                <h2>Pesquisar no estoque</h2>
-                <br>
-                <input type="text" id="campoPesquisa" placeholder="Produto/Código" onkeyup="filtrarTabela()">
-            </div>
-
-            <table id="produtosEstoque" class="tabelas">
-                <thead>
-                    <tr>
-                        <th>Produto</th>
-                        <th>Código</th>
-                        <th>Quantidade</th>
-                        <th>Data da Última Movimentação</th>
-                    </tr>
-                </thead>
-                <tbody id="dadosTabela">
-
-                </tbody>
-            </table>
-            <br>
-            <br>
-            <br>
-
-
-            <form action="" method="post">
-                <h2>Painel de estoque</h2>
-            </form>
-
-        </section>
-        <!-- Aba entrada -->
-        <section id="entrada" class="abas">
-            <form id="form-entrada" action="" method="post">
-                <h2>Entrada no Estoque</h2>
-                <br>
-                <p>
-                    <label for="responsavel-entrada"> <span class="material-symbols-outlined">
-                            person
-                        </span></label>
-                    <input placeholder="Responsável" class="inputs" id="responsavel-entrada" type="text" required>
-                </p>
-
-                <p>
-
-                    <label for="produto-entrada"><span class="material-symbols-outlined">
-                            box
-                        </span></label>
-                    <input placeholder="Produto" class="inputs" id="produto-entrada" type="text" required>
-                </p>
-
-                <p>
-                    <label for="codigo-entrada"><span class="material-symbols-outlined">
-                            barcode
-                        </span></label>
-                    <input placeholder="Código" class="inputs" id="codigo-entrada" type="number" required>
-
-                </p>
-
-                <p>
-                    <label for="cargo-entrada"><span class="material-symbols-outlined">
-                            badge
-                        </span></label>
-                    <input placeholder="Cargo do Funcionário" class="inputs" id="cargo-entrada" type="text" required>
-                </p>
-
-                <p>
-
-                    <label for="quantidade-entrada"> <span class="material-symbols-outlined">
-                            inventory
-                        </span></label>
-                    <input placeholder="Quantidade do produto" class="inputs" id="quantidade-entrada" type="number"
-                        required>
-                </p>
-
-                <p>
-                    <label for="data-entrada"> <span class="material-symbols-outlined">
-                            calendar_today
-                        </span></label>
-                    <input placeholder="Data da operação" class="inputs" id="data-entrada" type="date" required>
-                </p>
-
-                <p>
-                    <label for="hora-entrada"> <span class="material-symbols-outlined">
-                            schedule
-                        </span></label>
-                    <input placeholder="Hora da operação" class="inputs" id="hora-entrada" type="time" required>
-                </p>
-
-                <p><input class="button" id="submit-entrada" type="button" value="Registrar Entrada"
-                        onclick="rgEntrada()"></p>
-            </form>
-        </section>
-        <!-- Aba saída -->
-        <section id="saida" class="abas">
-            <form id="form-saida" action="" method="post">
-                <h2>Saída do Estoque</h2>
-                <br>
-                <p>
-                    <label for="responsavel-saida"> <span class="material-symbols-outlined">
-                            person
-                        </span></label>
-                    <input placeholder="Responsável" class="inputs" id="responsavel-saida" type="text" required>
-                </p>
-
-                <p>
-
-                    <label for="produto-saida"><span class="material-symbols-outlined">
-                            box
-                        </span></label>
-                    <input placeholder="Produto" class="inputs" id="produto-saida" type="text" required>
-                </p>
-
-                <p>
-                    <label for="codigo-saida"><span class="material-symbols-outlined">
-                            barcode
-                        </span></label>
-                    <input placeholder="Código" class="inputs" id="codigo-saida" type="text" required>
-
-                </p>
-
-                <p>
-                    <label for="cargo-saida"><span class="material-symbols-outlined">
-                            badge
-                        </span></label>
-                    <input placeholder="Cargo do Funcionário" class="inputs" id="cargo-saida" type="text" required>
-                </p>
-
-                <p>
-
-                    <label for="quantidade-saida"> <span class="material-symbols-outlined">
-                            inventory
-                        </span></label>
-                    <input placeholder="Quantidade do produto" class="inputs" id="quantidade-saida" type="number"
-                        required>
-                </p>
-
-                <p>
-                    <label for="data-saida"> <span class="material-symbols-outlined">
-                            calendar_today
-                        </span></label>
-                    <input placeholder="Data da operação" class="inputs" id="data-saida" type="date" required>
-                </p>
-
-                <p>
-                    <label for="hora-saida"> <span class="material-symbols-outlined">
-                            schedule
-                        </span></label>
-                    <input placeholder="Hora da operação" class="inputs" id="hora-saida" type="time" required>
-                </p>
-
-                <p><input onclick="rgSaida()" class="button" id="submit-saida" type="button" value="Registrar Saída">
-                </p>
-            </form>
-        </section>
-
-        <!-- Aba Devolução -->
-        <section id="devolucao" class="abas">
-            <form action="" method="post">
-                <h2>Devolução ao Estoque</h2>
-                <br>
-                <p>
-                    <label for="responsavel-devolucao"> <span class="material-symbols-outlined">
-                            person
-                        </span></label>
-                    <input placeholder="Responsável" class="inputs" id="responsavel-devolucao" type="text" required>
-                </p>
-
-                <p>
-
-                    <label for="item-nome-devolucao"><span class="material-symbols-outlined">
-                            box
-                        </span></label>
-                    <input placeholder="Produto" class="inputs" id="item-nome-devolucao" type="text" required>
-                </p>
-
-                <p>
-                    <label for="codigo-devolucao"><span class="material-symbols-outlined">
-                            barcode
-                        </span></label>
-                    <input placeholder="Código" class="inputs" id="codigo-devolucao" type="text" required>
-
-                </p>
-
-                <p>
-                    <label for="funcionario-cargo-devolucao"><span class="material-symbols-outlined">
-                            badge
-                        </span></label>
-                    <input placeholder="Cargo do Funcionário" class="inputs" id="funcionario-cargo-devolucao"
-                        type="text" required>
-                </p>
-
-                <p>
-
-                    <label for="item-quantidade-devolucao"> <span class="material-symbols-outlined">
-                            inventory
-                        </span></label>
-                    <input placeholder="Quantidade do produto" class="inputs" id="item-quantidade-devolucao"
-                        type="number" required>
-                </p>
-
-                <p>
-                    <label for="item-data-devolucao"> <span class="material-symbols-outlined">
-                            calendar_today
-                        </span></label>
-                    <input placeholder="Data da operação" class="inputs" id="item-data-devolucao" type="date" required>
-                </p>
-
-                <p>
-                    <label for="item-hora-devolucao"> <span class="material-symbols-outlined">
-                            schedule
-                        </span></label>
-                    <input placeholder="Hora da operação" class="inputs" id="item-hora-devolucao" type="time" required>
-                </p>
-
-                <p><input class="button" id="submit-devolucao" type="button" value="Registrar Devolução"></p>
-            </form>
-        </section>
-
-        <section id="history" class="abas">
-            <table class="tabelas">
-                <thead>
-                    <tr>
-                        <th>Data</th>
-                        <th>Hora</th>
-                        <th>Responsável</th>
-                        <th>Cargo</th>
-                        <th>Produto</th>
-                        <th>Código</th>
-                        <th>Quantidade</th>
-                        <th>Tipo de Operação</th>
-                    </tr>
-                </thead>
-                <tbody id="historicoDados">
-                    <!-- Os dados do histórico serão inseridos aqui dinamicamente -->
-                </tbody>
-            </table>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 
 </html>
